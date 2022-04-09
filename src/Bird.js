@@ -9,7 +9,7 @@ function Bird() {
 
   useEffect(() => {
     axios
-      .get("http://demo.jmunixusers.org:7777")
+      .get(process.env.BIRD_API_URL ?? "http://demo.jmunixusers.org:7777")
       .then((res) => {
         setData(res.data);
         console.log(res.data);
