@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 import { Card } from 'react-bootstrap';
 
@@ -8,8 +7,7 @@ function Bird() {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    axios
-      .get("http://demo.jmunixusers.org:7777")
+    fetch("http://demo.jmunixusers.org:7777")
       .then((res) => {
         setData(res.data);
         console.log(res.data);
